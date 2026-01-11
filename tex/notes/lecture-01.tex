@@ -403,27 +403,52 @@
 
 	      \medskip
 
-	      \textbf{Variance ($s^2$):}
-	      Ideally, we want to measure the average distance of data points from the mean. Variance does this by calculating the average \emph{squared} distance from the mean, where squaring ensures all values are positive. A larger variance indicates greater dispersion around the mean.
-	      \begin{itemize}
-		      \item \textbf{Sample Variance Formula:} We divide by $n-1$ instead of $n$ to obtain a better estimate of the population variance. This adjustment is known as Bessel's correction.
-		            \[
-			            s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}
-		            \]
-		      \item \textbf{Alternative Formula (Computational):} A mathematically equivalent formula often used in manual calculations to reduce rounding errors.
-		            \[
-			            s^2 = \frac{1}{n-1} \left[ \sum x_i^2 - \frac{(\sum x_i)^2}{n} \right]
-		            \]
-	      \end{itemize}
+	      \textbf{Variance:}
+	      Variance measures the average distance of data points from the mean by calculating the average \emph{squared} deviation. Squaring ensures all values are positive, and a larger variance indicates greater dispersion around the mean.
 
 	      \medskip
 
-	      \textbf{Standard Deviation ($s$):}
-	      Because variance is measured in squared units (for example, dollars squared), it can be difficult to interpret. Taking the square root returns the measure to the original units of the data.
+	      \textbf{Population Variance:}
+	      When data from the entire population are available, variance is defined as
 	      \[
-		      s = \sqrt{s^2}
+		      \sigma^2 = \frac{\sum (x_i - \mu)^2}{N}
+	      \]
+	      where $\mu$ is the population mean and $N$ is the population size.
+
+	      \medskip
+
+	      \textbf{Sample Variance ($s^2$):}
+	      When working with a sample, we divide by $n-1$ instead of $n$ to obtain an unbiased estimate of the population variance. This adjustment is known as \emph{Bessel's correction}.
+	      \[
+		      s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}
 	      \]
 
+	      \medskip
+
+	      \textbf{Alternative Formula (Computational):}
+	      A mathematically equivalent form often used in manual calculations to reduce rounding errors.
+	      \[
+		      s^2 = \frac{1}{n-1} \left[ \sum x_i^2 - \frac{(\sum x_i)^2}{n} \right]
+	      \]
+
+	      \medskip
+
+	      %------------------------------------------------------------
+	      \newpage
+	      \textbf{Standard Deviation:}
+	      The standard deviation is the square root of the variance and is expressed in the same units as the original data.
+
+	      \begin{itemize}
+		      \item \textbf{Population Standard Deviation ($\sigma$):}
+		            \[
+			            \sigma = \sqrt{\sigma^2}
+		            \]
+
+		      \item \textbf{Sample Standard Deviation ($s$):}
+		            \[
+			            s = \sqrt{s^2}
+		            \]
+	      \end{itemize}
 	      \medskip
 
 	      \textbf{Coefficient of Variation (CV):}
