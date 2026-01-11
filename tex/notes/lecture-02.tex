@@ -74,14 +74,55 @@ This interpretation relies on collecting data over the years or existing histori
 %------------------------------------------------------------
 \newpage
 \section{Complementary Events}
+The complement of an event $A$ denoted $P(A^c)$ and is given by $$P(A^c) = P(S) - P(A)$$
 
-%------------------------------------------------------------
-\newpage
-\section{Union of Events}
+Conceptually, the complement of an event can be thought of as the probability that it does not occur. Visually, this can be represented as the area in a venn diagram that is not in $A$.
 
-%------------------------------------------------------------
-\newpage
+\begin{center}
+	\begin{tikzpicture}
+		% Sample space S
+		\draw[thick, fill=gray!30] (0,0) rectangle (6,4);
+		\node at (0.2,4.3) {$S$};
+
+		% Event A
+		\draw[thick, fill=white!30] (3,2) ellipse (1.8cm and 1.2cm);
+		\node at (3,2) {$A$};
+
+		% Complement label
+		\node at (5,3) {$A^{c}$};
+	\end{tikzpicture}
+\end{center}
+
 \section{Intersection of Events}
+Given two events $A$ and $B$, the probability of their intersection denoted $$P(A \cap B)$$ is the probability that both events occur. In a venn diagram, it is the area where both events overlap.
+
+\begin{center}
+	\begin{tikzpicture}
+		% Sample space
+		\draw[thick] (0,0) rectangle (6,4);
+		\node at (0.2,4.3) {$S$};
+
+		% Circles/ellipses outlines (unfilled)
+		\draw[thick] (2,2) ellipse (1.8cm and 1.2cm);
+		\draw[thick] (4,2) ellipse (1.8cm and 1.2cm);
+
+
+		% Shade intersection only (clip trick)
+		\begin{scope}
+			\clip (2,2) ellipse (1.79cm and 1.19cm);
+			\fill[gray!35] (4,2) ellipse (1.79cm and 1.19cm);
+		\end{scope}
+
+		% Labels
+    \node at (1.1,2) {$A$};
+    \node at (4.9,2) {$B$};
+		\node at (3,2) {$A \cap B$};
+	\end{tikzpicture}
+\end{center}
+
+If two events $A$ and $B$ are mutually exclusive, then $P(A \cap B) = 0$ because both events never overlap.
+
+\section{Union of Events}
 
 %------------------------------------------------------------
 \newpage
