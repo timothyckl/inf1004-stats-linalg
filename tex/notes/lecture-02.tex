@@ -9,6 +9,7 @@
 \usepackage{pgfplots}
 \usepackage{float}
 \usepackage{tabularx}
+\usepackage{titlesec}
 
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{trees,positioning,shapes,arrows}
@@ -22,6 +23,19 @@
   level-3/.style = {basic, thin, align=center, fill=white, text width=1.8cm}
 }
 
+\titleformat{\section}  % which section command to format
+{\fontsize{12}{14}\bfseries} % format for whole line
+{\thesection} % how to show number
+{1em} % space between number and text
+{} % formatting for just the text
+[] % formatting for after the text
+
+\titleformat{\subsection}  % which section command to format
+{\fontsize{12}{14}\bfseries} % format for whole line
+{\thesubsection} % how to show number
+{1em} % space between number and text
+{} % formatting for just the text
+[] % formatting for after the text
 
 \begin{document}
 
@@ -37,28 +51,56 @@
 
 \hrule
 
-\begin{enumerate}[label=\textbf{\arabic*.}]
+\section{Types of Probability}
+Probability is defined as a number in the range $[0,1]$ that is assigned to an event associated with a random experiment. There are two interpretations of probability theory that guide how such values are assigned:
 
-	\item \textbf{Types of Probability}
+\subsection{Classical Probability}
+In classical probability, all outcomes in the sample space are assumed to be equally likely.\\
+The probability of a random event $A$ occuring is given as $$P(A)=\frac{\text{Number of different outcomes in A}}{\text{Total number of possible outcomes}}$$
+\textbf{\textit{Note:}} This definition is not very practical for everyday life because it assumes the outcomes are equally likely.
 
-	      \begin{itemize}
-		      \item Classical Probability
-		      \item Empirical Probability
-	      \end{itemize}
+\subsection{Empirical Probability}
+In empirical probability theory, the probability of an event $A$ occurring  approximated by the relative frequency of its occurrence over a large number of trials such that $$P(A)=\frac{\text{Number of times an outcome occurs}}{\text{Total number of observations}}$$
+This interpretation relies on collecting data over the years or existing historical data to propose such relative frequencies.
 
-	\item Complementary Events
-	\item Union of Events
-	\item Intersection of Events
-	\item Inclusion-Exclusion Principle
-	\item Multiplicative Rule of Probability
-	\item Independent and Mutually Exclusive Events
-	\item Law of Total Probability
-	\item Bayes' Theorem
+\subsection{Definitions}
+\begin{itemize}
+	\item We define a sample space $S$ as the set of all possible outcomes of a random phenomenon.
+	\item An event $A$ is defined as the set of outcomes under investigation.
+	\item By definition of probability, the following statements must hold to be valid: $$0 \leq P(A) \leq 1,\ P(S)=1$$
+	\item If $A_1, A_2, \ldots$ are mutually exclusive events, then $$P\!\left(\bigcup_{i} A_i\right) = \sum_{i} P(A_i)$$.
+\end{itemize}
 
-	      wah shag bro i damn laze
+%------------------------------------------------------------
+\newpage
+\section{Complementary Events}
 
-	      F my chungus life
+%------------------------------------------------------------
+\newpage
+\section{Union of Events}
 
-\end{enumerate}
+%------------------------------------------------------------
+\newpage
+\section{Intersection of Events}
+
+%------------------------------------------------------------
+\newpage
+\section{Inclusion-Exclusion Principle}
+
+%------------------------------------------------------------
+\newpage
+\section{Multiplicative Rule of Probability}
+
+%------------------------------------------------------------
+\newpage
+\section{Independent and Mutually Exclusive Events}
+
+%------------------------------------------------------------
+\newpage
+\section{Law of Total Probability}
+
+%------------------------------------------------------------
+\newpage
+\section{Bayes' Theorem}
 
 \end{document}
