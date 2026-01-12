@@ -218,16 +218,90 @@ Additionally, when working with conditional probability $P(A \mid B)$, the sampl
 
 
 %------------------------------------------------------------
-\newpage
+% \newpage
 \section{Multiplicative Rule of Probability}
+
+The definition of conditional probability provides a way to compute the intersection of events $A$ and $B$. Since,
+\begin{align*}
+	P(A \mid B) & = \frac{P(A \cap B)}{P(B)}, \\
+	P(B \mid A) & = \frac{P(A \cap B)}{P(A)}.
+\end{align*}
+
+We have that,
+\begin{align*}
+	P(A \cap B) & = P(A \mid B) \cdot P(B), \\
+	P(A \cap B) & = P(A \mid B) \cdot P(A).
+\end{align*}
 
 %------------------------------------------------------------
 \newpage
 \section{Independent and Mutually Exclusive Events}
 
+\subsection{Independent Events}
+
+Two events $A$ and $B$ are said to be \textbf{independent} if
+\[
+	P(A \cap B) = P(A)\,P(B).
+\]
+
+Equivalently, provided the relevant probabilities are non-zero,
+\[
+	P(A \mid B) = P(A)
+	\quad \text{or} \quad
+	P(B \mid A) = P(B).
+\]
+
+That is, the occurrence of one event does not affect the probability of the other. Using the definition of conditional probability,
+\[
+	P(A \cap B) = P(A \mid B)\,P(B).
+\]
+If $A$ and $B$ are independent, then $P(A \mid B) = P(A)$, and hence
+\[
+	P(A \cap B) = P(A)\,P(B).
+\]
+
+This result is known as the \textbf{multiplication rule for independent events}.
+
+\medskip
+
+More generally, if $A_1, A_2, \dots, A_n$ are mutually independent events, then the probability that all events occur is
+\[
+	P\!\left( \bigcap_{i=1}^{n} A_i \right)
+	= \prod_{i=1}^{n} P(A_i).
+\]
+
+
 %------------------------------------------------------------
 \newpage
 \section{Law of Total Probability}
+
+\begin{center}
+	\begin{tikzpicture}[scale=1]
+
+		% Sample space
+		\draw[thick] (0,0) rectangle (8,4);
+		\node at (0.3,4.3) {$S$};
+
+		\node at (1.35,3.6) {$S_1$};
+		\node at (4,3.6) {$S_2$};
+		\node at (6.7,3.6) {$S_3$};
+
+		% Event A (ellipse)
+		\fill[gray!40] (4,1.8) ellipse (2.9cm and 1.4cm);
+		\draw[thick] (4,1.8) ellipse (2.9cm and 1.4cm);
+
+		% % Labels for intersections
+		\node at (2.1,1.8) {$A \cap S_1$};
+		\node at (4,1.8) {$A \cap S_2$};
+		\node at (5.9,1.8) {$A \cap S_3$};
+
+		% Partition lines (S1, S2, S3)
+		\draw[dashed] (2.9,0) -- (2.9,4);
+		\draw[dashed] (5.1,0) -- (5.1,4);
+
+	\end{tikzpicture}
+\end{center}
+
 
 %------------------------------------------------------------
 \newpage
