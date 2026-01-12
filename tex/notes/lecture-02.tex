@@ -235,7 +235,147 @@ We have that,
 
 %------------------------------------------------------------
 \newpage
+% \section{Independent and Mutually Exclusive Events}
+%
+% Events may be related in different ways depending on how the occurrence of one affects another.
+% Two important relationships are \emph{independence} and \emph{mutual exclusivity}.
+% These concepts are fundamentally different and should not be confused.
+%
+% \medskip
+%
+% \textbf{Independent events} may occur together, but the occurrence of one does not affect the probability of the other.
+%
+% \begin{center}
+% 	\begin{tikzpicture}[scale=1]
+% 		% Sample space
+% 		\draw[thick] (0,0) rectangle (6,4);
+% 		\node at (0.2,4.3) {$S$};
+%
+% 		% Events
+% 		\draw[thick] (2.5,2) ellipse (1.6cm and 1.1cm);
+% 		\draw[thick] (3.5,2) ellipse (1.6cm and 1.1cm);
+%
+% 		% Labels
+% 		\node at (2,2) {$A$};
+% 		\node at (4,2) {$B$};
+% 	\end{tikzpicture}
+% \end{center}
+%
+% \medskip
+%
+% \textbf{Mutually exclusive events} cannot occur at the same time, so their intersection is empty.
+%
+% \begin{center}
+% 	\begin{tikzpicture}[scale=1]
+% 		% Sample space
+% 		\draw[thick] (0,0) rectangle (6,4);
+% 		\node at (0.2,4.3) {$S$};
+%
+% 		% Events
+% 		\draw[thick] (2,2) ellipse (1.4cm and 1.1cm);
+% 		\draw[thick] (4,2) ellipse (1.4cm and 1.1cm);
+%
+% 		% Labels
+% 		\node at (2,2) {$A$};
+% 		\node at (4,2) {$B$};
+% 	\end{tikzpicture}
+% \end{center}
+%
+% \subsection{Independent Events}
+%
+% Two events $A$ and $B$ are said to be \textbf{independent} if
+% \[
+% 	P(A \cap B) = P(A)\,P(B).
+% \]
+%
+% Equivalently, provided the relevant probabilities are non-zero,
+% \[
+% 	P(A \mid B) = P(A)
+% 	\quad \text{or} \quad
+% 	P(B \mid A) = P(B).
+% \]
+%
+% That is, the occurrence of one event does not affect the probability of the other. Using the definition of conditional probability,
+% \[
+% 	P(A \cap B) = P(A \mid B)\,P(B).
+% \]
+% If $A$ and $B$ are independent, then $P(A \mid B) = P(A)$, and hence
+% \[
+% 	P(A \cap B) = P(A)\,P(B).
+% \]
+%
+% This result is known as the \textbf{multiplication rule for independent events}.
+%
+% \medskip
+%
+% More generally, if $A_1, A_2, \dots, A_n$ are mutually independent events, then the probability that all events occur is
+% \[
+% 	P\!\left( \bigcap_{i=1}^{n} A_i \right)
+% 	= \prod_{i=1}^{n} P(A_i).
+% \]
+
+\newpage
 \section{Independent and Mutually Exclusive Events}
+
+Events may be related in different ways depending on how the occurrence of one affects another.
+Two important relationships are \emph{independence} and \emph{mutual exclusivity}.
+These concepts are fundamentally different and should not be confused.
+
+\medskip
+
+% --- Side-by-side diagrams (fixed) ---
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+	\centering
+	\textbf{Independent Events}
+
+	\medskip
+
+	\begin{tikzpicture}[scale=0.9]
+		% Sample space
+		\draw[thick] (0,0) rectangle (7,4);
+		\node[anchor=south west] at (0,4) {$S$};
+
+		% Events (overlap is allowed)
+		\draw[thick] (2.6,2) ellipse (1.5cm and 1.5cm);
+		\draw[thick] (4.6,2) ellipse (1.5cm and 1.5cm);
+
+		% Labels
+		\node at (2.5,2) {$A$};
+		\node at (4.7,2) {$B$};
+	\end{tikzpicture}
+
+	\medskip
+	Both events may occur, but the occurrence of one does not affect the probability of the other.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+	\centering
+	\textbf{Mutually Exclusive Events}
+
+	\medskip
+
+	\begin{tikzpicture}[scale=0.9]
+		% Sample space
+		\draw[thick] (0,0) rectangle (7,4);
+		\node[anchor=south west] at (0,4) {$S$};
+
+		% Events (NO overlap)
+		\draw[thick] (1.8,2) ellipse (1.5cm and 1.5cm);
+		\draw[thick] (5.2,2) ellipse (1.5cm and 1.5cm);
+
+		% Labels
+		\node at (1.8,2) {$A$};
+		\node at (5.2,2) {$B$};
+	\end{tikzpicture}
+
+	\medskip
+	Events cannot occur at the same time, so \(A \cap B = \varnothing\).
+\end{minipage}
+
+\medskip
+
+\textbf{\textit{Note:}} Independent events may overlap, whereas mutually exclusive events never do.
 
 \subsection{Independent Events}
 
@@ -251,7 +391,8 @@ Equivalently, provided the relevant probabilities are non-zero,
 	P(B \mid A) = P(B).
 \]
 
-That is, the occurrence of one event does not affect the probability of the other. Using the definition of conditional probability,
+That is, the occurrence of one event does not affect the probability of the other.
+Using the definition of conditional probability,
 \[
 	P(A \cap B) = P(A \mid B)\,P(B).
 \]
@@ -270,10 +411,63 @@ More generally, if $A_1, A_2, \dots, A_n$ are mutually independent events, then 
 	= \prod_{i=1}^{n} P(A_i).
 \]
 
-
 %------------------------------------------------------------
 \newpage
+% \section{Law of Total Probability}
+%
+% The Law of Total Probability is a rule that lets you calculate the probability of an event by breaking it down into several mutually exclusive cases that together cover all possibilities.
+%
+% \begin{center}
+% 	\begin{tikzpicture}[scale=1]
+%
+% 		% Sample space
+% 		\draw[thick] (0,0) rectangle (8,4);
+% 		\node at (0.3,4.3) {$S$};
+%
+% 		\node at (1.35,3.6) {$S_1$};
+% 		\node at (4,3.6) {$S_2$};
+% 		\node at (6.7,3.6) {$S_3$};
+%
+% 		% Event A (ellipse)
+% 		\fill[gray!40] (4,1.8) ellipse (2.9cm and 1.4cm);
+% 		\draw[thick] (4,1.8) ellipse (2.9cm and 1.4cm);
+%
+% 		% % Labels for intersections
+% 		\node at (2.1,1.8) {$A \cap S_1$};
+% 		\node at (4,1.8) {$A \cap S_2$};
+% 		\node at (5.9,1.8) {$A \cap S_3$};
+%
+% 		% Partition lines (S1, S2, S3)
+% 		\draw[dashed] (2.9,0) -- (2.9,4);
+% 		\draw[dashed] (5.1,0) -- (5.1,4);
+%
+% 	\end{tikzpicture}
+% \end{center}
+
 \section{Law of Total Probability}
+
+The \textbf{Law of Total Probability} allows us to compute the probability of an event by decomposing the sample space into several mutually exclusive and exhaustive cases.
+
+\subsection{Definition}
+
+Suppose $S_1, S_2, \dots, S_n$ form a \textbf{partition} of the sample space $S$, meaning:
+\begin{itemize}
+	\item $S_i \cap S_j = \varnothing$ for $i \neq j$ (mutually exclusive),
+	\item $\displaystyle \bigcup_{i=1}^{n} S_i = S$ (exhaustive),
+	\item $P(S_i) > 0$ for all $i$.
+\end{itemize}
+
+Then for any event $A \subseteq S$, we may write $A$ as the union of its intersections with each $S_i$:
+\[
+	A = (A \cap S_1) \cup (A \cap S_2) \cup \cdots \cup (A \cap S_n).
+\]
+
+Since these intersections are mutually exclusive, their probabilities add, giving
+\[
+	P(A) = P(A \cap S_1) + P(A \cap S_2) + \cdots + P(A \cap S_n).
+\]
+
+This concept can be visualised with the following Venn diagram.
 
 \begin{center}
 	\begin{tikzpicture}[scale=1]
@@ -286,25 +480,73 @@ More generally, if $A_1, A_2, \dots, A_n$ are mutually independent events, then 
 		\node at (4,3.6) {$S_2$};
 		\node at (6.7,3.6) {$S_3$};
 
-		% Event A (ellipse)
+		% Event A
 		\fill[gray!40] (4,1.8) ellipse (2.9cm and 1.4cm);
 		\draw[thick] (4,1.8) ellipse (2.9cm and 1.4cm);
 
-		% % Labels for intersections
+		% Intersection labels
 		\node at (2.1,1.8) {$A \cap S_1$};
 		\node at (4,1.8) {$A \cap S_2$};
 		\node at (5.9,1.8) {$A \cap S_3$};
 
-		% Partition lines (S1, S2, S3)
+		% Partition lines
 		\draw[dashed] (2.9,0) -- (2.9,4);
 		\draw[dashed] (5.1,0) -- (5.1,4);
 
 	\end{tikzpicture}
 \end{center}
 
+Using the definition of conditional probability,
+\[
+	P(A \cap S_i) = P(A \mid S_i)\,P(S_i).
+\]
+
+Substituting this into the previous expression yields the \textbf{Law of Total Probability}:
+\[
+	P(A) = \sum_{i=1}^{n} P(A \mid S_i)\,P(S_i).
+\]
+
 
 %------------------------------------------------------------
 \newpage
 \section{Bayes' Theorem}
+
+Bayes’ Theorem provides a way to reverse conditional probabilities. In particular, it allows us to compute $P(B \mid A)$ in terms of $P(A \mid B)$, together with prior information about $B$. From the definition of conditional probability, we have
+\[
+	P(A \mid B) = \frac{P(A \cap B)}{P(B)}
+	\quad \text{and} \quad
+	P(B \mid A) = \frac{P(A \cap B)}{P(A)}.
+\]
+
+Rearranging the first expression gives
+\[
+	P(A \cap B) = P(A \mid B)\,P(B).
+\]
+
+Substituting this into the second expression yields \textbf{Bayes’ Theorem}:
+\[
+	P(B \mid A) = \frac{P(A \mid B)\,P(B)}{P(A)}.
+\]
+
+\medskip
+
+In practice, the probability $P(A)$ in the denominator is often unknown directly. It is commonly computed using the \textbf{Law of Total Probability}.
+
+\medskip
+
+Suppose $B$ and $B^{c}$ form a partition of the sample space, meaning they are mutually exclusive and exhaustive. Then
+\[
+	P(A) = P(A \mid B)\,P(B) + P(A \mid B^{c})\,P(B^{c}).
+\]
+
+Substituting this into Bayes’ Theorem gives the expanded form:
+\[
+	P(B \mid A)
+	=
+	\frac{P(A \mid B)\,P(B)}
+	{P(A \mid B)\,P(B) + P(A \mid B^{c})\,P(B^{c})}.
+\]
+
+This formulation highlights how Bayes’ Theorem updates the probability of an event using new information, weighted by prior probabilities.
 
 \end{document}
