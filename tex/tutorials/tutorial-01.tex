@@ -55,6 +55,49 @@
 
 	      \textbf{Solution.}
 	      %------------------------------------------------------------
+
+	      \begin{enumerate}[label=(\alph*)]
+		      \item The sample mean is
+		            \[
+			            \bar{x}=\frac{\sum_{i=1}^{20} x_i}{20}
+			            =\frac{787}{20}=39.35\text{ s}.
+		            \]
+		            The sample variance is
+		            \[
+			            s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2
+			            =\frac{3054.55}{19}=160.7658.
+		            \]
+		            Hence the sample standard deviation is
+		            \[
+			            s=\sqrt{s^2}=\sqrt{160.7658}=12.679\text{ s}\quad (\text{3 d.p.}).
+		            \]
+
+		      \item Including the additional three times, the ordered data set is
+		            \[
+			            17,\,19,\,22,\,26,\,28,\,31,\,34,\,36,\,38,\,39,\,41,\,42,\,43,\,47,\,50,\,51,\,53,\,55,\,57,\,58,\,62,\,65,\,97.
+		            \]
+		            With $n=23$, the median is the $12$th value, so $Q_2=42$.
+		            The lower half has $11$ values, so $Q_1$ is its median: $Q_1=31$.
+		            The upper half has $11$ values, so $Q_3$ is its median: $Q_3=55$.
+		            Therefore,
+		            \[
+			            \mathrm{IQR}=Q_3-Q_1=55-31=24.
+		            \]
+
+		      \item The outlier fences are
+		            \[
+			            \text{Lower fence}=Q_1-1.5(\mathrm{IQR})=31-1.5(24)=-5,
+		            \]
+		            \[
+			            \text{Upper fence}=Q_3+1.5(\mathrm{IQR})=55+1.5(24)=91.
+		            \]
+		            Since $97>91$, the value $97$ is an outlier.
+	      \end{enumerate}
+
+
+	      % -----------------------------------------------------------
+
+
 	      \newpage
 	\item Consider the following tree diagram. \\ [0.2cm]
 
@@ -219,9 +262,31 @@
 
 	      \textbf{Solution.}
 
+	      \begin{enumerate}[label=(\alph*)]
+		      \item Since $x$ labels the branch from the root to $A_1$, we have $x=P(A_1)$.
 
-	      %------------------------------------------------------------
-	      \newpage
+		      \item Since $y$ labels the branch from $A_1$ to $B_2$, we have $y=P(B_2\mid A_1)$.
+
+		      \item Since $z$ labels the branch from $A_1\cap B_2$ to $C_1$, we have $z=P(C_1\mid A_1\cap B_2)$.
+
+		      \item The circled node corresponds to the event $A_1\cap B_2\cap C_1$.
+
+		      \item If $P(A^c\cap B^c)=\tfrac{3}{8}$, then by De Morgan's law,
+		            \[
+			            P(A\cup B)=1-P\big((A\cup B)^c\big)=1-P(A^c\cap B^c)=1-\frac{3}{8}=\frac{5}{8}.
+		            \]
+
+		      \item We are given $P(C)=0.5$, $P(C\cap D)=0.2$ and $P\big((C\cup D)^c\big)=0.4$.
+		            Then $P(C\cup D)=1-0.4=0.6$, and by inclusion--exclusion,
+		            \[
+			            P(C\cup D)=P(C)+P(D)-P(C\cap D).
+		            \]
+		            Hence
+		            \[
+			            0.6=0.5+P(D)-0.2 \quad\Rightarrow\quad P(D)=0.3.
+		            \]
+	      \end{enumerate}
+
 	\item In a survey of 1929 students, the following data were obtained on ``students' first reason
 	      for application to the university in which they matriculated.''
 
@@ -258,6 +323,43 @@
 	      \medskip
 
 	      \textbf{Solution.}
+	      \begin{enumerate}[label=(\alph*)]
+		      \item $P(A)=\frac{821}{1929}\approx 0.4256$.
+
+		      \item $P(B\mid A)=\frac{421}{890}\approx 0.4730$.
+
+		      \item
+		            To test independence, we can check whether $P(B\mid A)=P(B)$ (equivalently, whether
+		            $P(A\cap B)=P(A)P(B)$).
+
+		            From the given fractions,
+		            \[
+			            P(B)=\frac{821}{1929}\approx 0.4256,
+			            \qquad
+			            P(B\mid A)=\frac{421}{890}\approx 0.4730.
+		            \]
+		            Since
+		            \[
+			            P(B\mid A)\neq P(B)
+			            \quad\text{(i.e. }0.4730\neq 0.4256\text{),}
+		            \]
+		            events $A$ and $B$ are \textbf{not independent}.
+
+		            We can also verify this using $P(A\cap B)=P(A)P(B)$:
+		            \[
+			            P(A)=\frac{890}{1929}\approx 0.4614,
+			            \qquad
+			            P(A\cap B)=\frac{421}{1929}\approx 0.2183.
+		            \]
+		            But
+		            \[
+			            P(A)P(B)=\left(\frac{890}{1929}\right)\left(\frac{821}{1929}\right)
+			            \approx 0.1965 \neq 0.2183 \approx P(A\cap B).
+		            \]
+		            Therefore, events $A$ and $B$ are \textbf{dependent}.
+
+
+	      \end{enumerate}
 
 	      %------------------------------------------------------------
 	      \newpage
@@ -272,6 +374,56 @@
 	      \medskip
 
 	      \textbf{Solution.}
+	      \begin{enumerate}[label=(\alph*)]
+		      \item
+		            Let $A$ be the event that a person has the disease, and $B$ be the event that the person tests positive.
+		            We are given
+		            \[
+			            P(A)=0.02,\quad P(A^c)=0.98,\quad P(B\mid A)=0.96,\quad P(B^c\mid A^c)=0.94.
+		            \]
+		            First find the false positive rate:
+		            \[
+			            P(B\mid A^c)=1-P(B^c\mid A^c)=1-0.94=0.06.
+		            \]
+		            Using Bayes' theorem,
+		            \[
+			            P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B\mid A)P(A)+P(B\mid A^c)P(A^c)}
+			            =\frac{0.96(0.02)}{0.96(0.02)+0.06(0.98)}.
+		            \]
+		            Therefore,
+		            \[
+			            P(A\mid B)=\frac{0.0192}{0.0192+0.0588}
+			            =\frac{0.0192}{0.078}
+			            \approx 0.2462.
+		            \]
+
+		      \item
+		            We want the probability that a person who tests negative does \emph{not} have the disease, i.e.
+		            \[
+			            P(A^c\mid B^c).
+		            \]
+		            First find the false negative rate:
+		            \[
+			            P(B^c\mid A)=1-P(B\mid A)=1-0.96=0.04.
+		            \]
+		            Then
+		            \[
+			            P(A^c\cap B^c)=P(B^c\mid A^c)P(A^c)=0.94(0.98)=0.9212,
+		            \]
+		            \[
+			            P(A\cap B^c)=P(B^c\mid A)P(A)=0.04(0.02)=0.0008,
+		            \]
+		            so
+		            \[
+			            P(B^c)=P(A^c\cap B^c)+P(A\cap B^c)=0.9212+0.0008=0.922.
+		            \]
+		            Hence,
+		            \[
+			            P(A^c\mid B^c)=\frac{P(A^c\cap B^c)}{P(B^c)}
+			            =\frac{0.9212}{0.922}
+			            \approx 0.9991.
+		            \]
+	      \end{enumerate}
 
 	      %------------------------------------------------------------
 	      \newpage
@@ -283,6 +435,39 @@
 
 	      \medskip
 	      \textbf{Solution.}
+
+	      Let $I$ be the event that a woman is pregnant with \textbf{identical} twins, and let $F$ be the event that she is pregnant with \textbf{fraternal} twins. We are given
+	      \[
+		      P(I)=\frac13
+		      \qquad\Rightarrow\qquad
+		      P(F)=1-P(I)=\frac23.
+	      \]
+	      Let $B$ be the event that \textbf{both twins are boys}. We want to find $P(I\mid B)$.
+
+	      If the twins are identical, they must be the same sex (either $BB$ or $GG$), and these two outcomes are equally likely, so
+	      \[
+		      P(B\mid I)=\frac12.
+	      \]
+	      If the twins are fraternal, the four outcomes $BB, BG, GB, GG$ are equally likely, hence
+	      \[
+		      P(B\mid F)=\frac14.
+	      \]
+
+	      Using Bayes' Theorem,
+	      \[
+		      P(I\mid B)=\frac{P(B\mid I)\,P(I)}{P(B\mid I)\,P(I)+P(B\mid F)\,P(F)}.
+	      \]
+	      Substituting values gives
+	      \[
+		      P(I\mid B)=\frac{\left(\frac12\right)\left(\frac13\right)}
+		      {\left(\frac12\right)\left(\frac13\right)+\left(\frac14\right)\left(\frac23\right)}
+		      =\frac{\frac16}{\frac16+\frac16}
+		      =\frac12.
+	      \]
+
+	      \[
+		      P(I\mid B)=\frac12.
+	      \]
 
 	      %------------------------------------------------------------
 	      \newpage
@@ -297,6 +482,49 @@
 	      \medskip
 
 	      \textbf{Solution.}
+
+	      Let $S$ be the sample space containing all possible birth sequences:
+	      \[
+		      S=\{ABC,\,ACB,\,BAC,\,BCA,\,CAB,\,CBA\}.
+	      \]
+
+	      \begin{itemize}
+		      \item[(a)] Let $A$ be the event that Alice is born before Carl. Then
+		            \[
+			            A=\{ABC,\,ACB,\,BAC\}
+			            \qquad\Rightarrow\qquad
+			            P(A)=\frac{3}{6}=\frac12.
+		            \]
+		            Let $B$ be the event that Alice is born before Bob, given that Alice is born before Carl.
+		            Within $A$, the outcomes are $ABC, ACB, BAC$, and Alice is born before Bob in $ABC$ and $ACB$, so
+		            \[
+			            P(B\mid A)=\frac{2}{3}.
+		            \]
+
+		      \item[(b)] Using the same events
+		            \[
+			            A=\{\text{Alice is born before Carl}\},
+			            \qquad
+			            B=\{\text{Alice is born before Bob}\},
+		            \]
+		            we have
+		            \[
+			            P(A)=\frac12,
+			            \qquad
+			            P(B)=\frac12.
+		            \]
+		            Also,
+		            \[
+			            A\cap B=\{ABC,\,ACB\}
+			            \qquad\Rightarrow\qquad
+			            P(A\cap B)=\frac{2}{6}=\frac13.
+		            \]
+		            Since
+		            \[
+			            P(A\cap B)=\frac13 \neq \frac12\cdot\frac12=\frac14,
+		            \]
+		            the events $A$ and $B$ are \textbf{not independent}.
+	      \end{itemize}
 
 	      %------------------------------------------------------------
 	      \newpage
@@ -317,6 +545,48 @@
 	      \textbf{Solution.}
 
 
+	      Let $G$ be the event of \textbf{good behaviour} and let $E$ be the event of \textbf{excellent homework}.
+	      We are given
+	      \[
+		      P(G)=0.6,\quad P(G^{c})=0.4,\quad P(E\mid G)=0.8,\quad P(E\mid G^{c})=0.5.
+	      \]
+
+	      \begin{itemize}
+		      \item[(a)]
+		            \[
+			            P(G\cap E)=P(G)\,P(E\mid G)=(0.6)(0.8)=0.48.
+		            \]
+
+		      \item[(b)]
+		            \[
+			            P(G^{c}\cap E)=P(G^{c})\,P(E\mid G^{c})=(0.4)(0.5)=0.20.
+		            \]
+
+		      \item[(c)] Using that $E=(E\cap G)\cup(E\cap G^{c})$ with disjoint parts,
+		            \[
+			            P(E)=P(E\cap G)+P(E\cap G^{c})=0.48+0.20=0.68.
+		            \]
+
+		      \item[(d)] Let $N$ be the event of \textbf{no special treatment}.
+		            A student gets special treatment iff $G\cap E$, so
+		            \[
+			            N=(G\cap E)^{c}=G^{c}\cup E^{c}.
+		            \]
+		            Given $E$ occurred,
+		            \[
+			            N\cap E = (G^{c}\cup E^{c})\cap E
+			            =(G^{c}\cap E)\cup(E^{c}\cap E)
+			            =G^{c}\cap E.
+		            \]
+		            Hence,
+		            \[
+			            P(N\mid E)=\frac{P(N\cap E)}{P(E)}
+			            =\frac{P(G^{c}\cap E)}{P(E)}
+			            =\frac{0.20}{0.68}
+			            \approx 0.2941.
+		            \]
+	      \end{itemize}
+
 	      %------------------------------------------------------------
 	      \newpage
 	\item In an attempt to find the mean number of hours his tutorial classmates spent per day preparing for tutorials,
@@ -332,6 +602,63 @@
 	      \medskip
 	      \textbf{Solution.}
 
+	      Group A (10 friends) has
+	      \[
+		      n_1=10,\qquad \bar{x}_1=2.4\text{ hours},\qquad s_1=0.8\text{ hours}.
+	      \]
+	      Group B (5 friends) has
+	      \[
+		      n_2=5,\qquad \bar{x}_2=2.0\text{ hours},\qquad s_2=1.2\text{ hours}.
+	      \]
+	      Let the combined group have size $n=n_1+n_2=15$.
+
+	      \begin{itemize}
+		      \item The combined mean is
+		            \[
+			            \bar{x}=\frac{n_1\bar{x}_1+n_2\bar{x}_2}{n_1+n_2}
+			            =\frac{10(2.4)+5(2.0)}{15}
+			            =\frac{34}{15}
+			            \approx 2.27\text{ hours}.
+		            \]
+
+		      \item To find the combined standard deviation, combine sums of squares.
+		            The within-group sums of squares are
+		            \[
+			            SS_1=(n_1-1)s_1^2=9(0.8^2)=5.76,
+			            \qquad
+			            SS_2=(n_2-1)s_2^2=4(1.2^2)=5.76.
+		            \]
+		            The between-group sum of squares is
+		            \[
+			            SS_{\text{between}}=n_1(\bar{x}_1-\bar{x})^2+n_2(\bar{x}_2-\bar{x})^2.
+		            \]
+		            Using $\bar{x}=\frac{34}{15}$,
+		            \[
+			            \bar{x}_1-\bar{x}=2.4-\frac{34}{15}=\frac{2}{15},
+			            \qquad
+			            \bar{x}_2-\bar{x}=2.0-\frac{34}{15}=-\frac{4}{15},
+		            \]
+		            so
+		            \[
+			            SS_{\text{between}}=10\left(\frac{2}{15}\right)^2+5\left(\frac{4}{15}\right)^2
+			            =\frac{8}{15}\approx 0.5333.
+		            \]
+		            Hence the total sum of squares is
+		            \[
+			            SS=SS_1+SS_2+SS_{\text{between}}
+			            =5.76+5.76+\frac{8}{15}
+			            \approx 12.0533.
+		            \]
+		            The combined sample variance is
+		            \[
+			            s^2=\frac{SS}{n-1}=\frac{12.0533}{14}\approx 0.8610,
+		            \]
+		            so the combined sample standard deviation is
+		            \[
+			            s=\sqrt{0.8610}\approx 0.9279\text{ hours}.
+		            \]
+	      \end{itemize}
+
 	      %------------------------------------------------------------
 	      \newpage
 	\item A certain family has 6 children, consisting of 3 boys and 3 girls. Assuming that all birth orders are equally likely,
@@ -339,6 +666,28 @@
 
 	      \medskip
 	      \textbf{Solution.}
+
+	      There are $6! = 720$ possible birth orders of the 6 children, and each order is equally likely.
+
+	      To have the three girls in the first three positions, the girls can be arranged in $3!$ ways.
+	      To have the three boys in the last three positions, the boys can be arranged in $3!$ ways.
+	      Hence the number of favourable birth orders is
+	      \[
+		      3!\cdot 3! = 36,
+	      \]
+	      so
+	      \[
+		      P(\text{first three are girls and last three are boys})
+		      =\frac{36}{720}
+		      =\frac{1}{20}.
+	      \]
+
+	      Equivalently,
+	      \[
+		      P(\text{GGG then BBB})
+		      =\frac{3}{6}\cdot\frac{2}{5}\cdot\frac{1}{4}
+		      =\frac{1}{20}.
+	      \]
 
 \end{enumerate}
 
